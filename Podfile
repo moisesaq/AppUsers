@@ -7,6 +7,7 @@ target 'AppUsers' do
 
   # Pods for AppUsers
   pod 'Alamofire', '~> 4.4'
+  pod 'SlideMenuControllerSwift'
 
   target 'AppUsersTests' do
     inherit! :search_paths
