@@ -17,16 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        /*let mainViewController = ViewController()
+        let mainViewController = ViewController()
         let leftViewController = LeftViewController()
         let rightVieController = RightViewController()
-        let slideMenuController = ContainerViewController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightVieController)
         
+        let slideMenuController = ContainerViewController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightVieController)
+
         self.window?.rootViewController = slideMenuController
-        self.window?.makeKeyAndVisible()*/
-        window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+        /*window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = MainNavigationViewController()
+        window?.rootViewController = MainNavigationViewController()*/
         return true
     }
 

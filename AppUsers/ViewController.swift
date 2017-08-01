@@ -23,16 +23,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBarButton()
-        //addBarButton2()
+        addNavBar()
         navigationItem.title = "Dragon ball Z"
         view.backgroundColor = .white
         view.addSubview(testButton)
         _ = testButton.anchor(view.topAnchor, left: nil, bottom: nil, right: nil, topConstant: 70, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 0)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //self.addBarButton()
+    }
 
     func testAlamofire(){
-        //self.slideMenuController()?.openLeft()
         Alamofire.request("https://randomuser.me/api").responseJSON(completionHandler: { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
@@ -48,16 +51,24 @@ class ViewController: UIViewController {
         })
     }
     
-    func addBarButton(){
-        if let slideMenuController = self.slideMenuController(){
-            print("Added bar buttons")
-            slideMenuController.addLeftBarButtonWithImage(UIImage(named: "menu_list")!)
-            slideMenuController.addRightBarButtonWithImage(UIImage(named: "menu_list")!)
-        }
+    func addNavBar(){
+        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 64))
+        navBar.backgroundColor = .green
+        self.view.addSubview(navBar)
+        let navItem = UINavigationItem(title: "SomeTitle")
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(openMenuRight))
+        let menuItem = UIBarButtonItem(image: UIImage(named: "menu_list"), style: .plain, target: self, action: #selector(openMenuLeft))
+        navItem.rightBarButtonItem = doneItem
+        navItem.leftBarButtonItem = menuItem
+        navBar.setItems([navItem], animated: false);
     }
     
-    fileprivate func addBarButton2(){
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: nil)
+    func openMenuLeft(){
+        self.slideMenuController()?.openLeft()
+    }
+    
+    func openMenuRight(){
+        self.slideMenuController()?.openRight()
     }
 
 }
