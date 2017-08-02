@@ -29,12 +29,8 @@ class ViewController: UIViewController {
         view.addSubview(testButton)
         _ = testButton.anchor(view.topAnchor, left: nil, bottom: nil, right: nil, topConstant: 70, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 100, heightConstant: 0)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //self.addBarButton()
-    }
 
+    //TEST ALAMOFIRE
     func testAlamofire(){
         Alamofire.request("https://randomuser.me/api").responseJSON(completionHandler: { response in
             print("Request: \(String(describing: response.request))")   // original url request
@@ -51,6 +47,7 @@ class ViewController: UIViewController {
         })
     }
     
+    //ADD NAVIGATION BAR FOR OPEN MENU
     func addNavBar(){
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 64))
         navBar.backgroundColor = .green

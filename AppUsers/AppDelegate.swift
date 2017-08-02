@@ -23,8 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let slideMenuController = ContainerViewController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightVieController)
 
-        self.window?.rootViewController = slideMenuController
+        
+        self.window?.rootViewController = slideMenuController //UINavigationController(rootViewController: slideMenuController)
         self.window?.makeKeyAndVisible()
+        
+        
         /*window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = MainNavigationViewController()*/

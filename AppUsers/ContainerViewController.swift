@@ -13,13 +13,13 @@ class ContainerViewController: SlideMenuController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addNavBar()
-        //addBarButton()
-        //SlideMenuOptions.leftViewWidth = 50
-        //SlideMenuOptions.contentViewScale = 0.50
+        /*addNavBar()
+        addBarButton()
+        SlideMenuOptions.leftViewWidth = 30
+        SlideMenuOptions.contentViewScale = 0.50*/
     }
     
-    override func awakeFromNib() {
+    /*override func awakeFromNib() {
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Main") {
             self.mainViewController = controller
         }
@@ -27,7 +27,7 @@ class ContainerViewController: SlideMenuController{
             self.leftViewController = controller
         }
         super.awakeFromNib()
-    }
+    }*/
     
     func addNavBar(){
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
